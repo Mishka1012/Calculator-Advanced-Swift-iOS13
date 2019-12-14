@@ -56,10 +56,11 @@
 		ADB1961F2146629E00C5317F /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				E817B96923A5840E00B22EBA /* Controller */,
+				E817B96823A5840800B22EBA /* View */,
+				E817B96723A583FA00B22EBA /* Model */,
 				E817B96423A5814000B22EBA /* Fonts */,
 				ADB196202146629E00C5317F /* AppDelegate.swift */,
-				ADB196222146629E00C5317F /* ViewController.swift */,
-				ADB196242146629E00C5317F /* Main.storyboard */,
 				ADB19627214662A000C5317F /* Assets.xcassets */,
 				ADB19629214662A000C5317F /* LaunchScreen.storyboard */,
 				ADB1962C214662A000C5317F /* Info.plist */,
@@ -73,6 +74,29 @@
 				E817B96523A5815A00B22EBA /* Calculator.ttf */,
 			);
 			path = Fonts;
+			sourceTree = "<group>";
+		};
+		E817B96723A583FA00B22EBA /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		E817B96823A5840800B22EBA /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ADB196242146629E00C5317F /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		E817B96923A5840E00B22EBA /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				ADB196222146629E00C5317F /* ViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

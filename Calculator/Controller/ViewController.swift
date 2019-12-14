@@ -11,21 +11,19 @@ import UIKit
 class ViewController: UIViewController {
     
     @IBOutlet weak var displayLabel: UILabel!
-    
-    
-    
+    //all calculations
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         
         //What should happen when a non-number button is pressed
     
     }
-
-    
+    //all numbers
     @IBAction func numButtonPressed(_ sender: UIButton) {
-        
         //What should happen when a number is entered into the keypad
-    
+        guard let number = sender.currentTitle else {
+            fatalError("Number button title returned nil!")
+        }
+        displayLabel.text?.append(number)
     }
-
 }
 
