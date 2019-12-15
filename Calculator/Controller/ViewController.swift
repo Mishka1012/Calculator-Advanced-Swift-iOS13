@@ -13,24 +13,33 @@ class ViewController: UIViewController {
     @IBOutlet weak var displayLabel: UILabel!
     //this variable is only accessible within this class
     private var isFinishedTypingNumber: Bool = true
+    //computed properties
+    private var displayValue: Double {
+        get {
+            guard let display = Double(displayLabel.text!) else {
+                fatalError("Unable to convert display label to double")
+            }
+            return display
+        }
+        set {
+            displayLabel.text = String(newValue)
+        }
+    }
     //all calculations
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         //What should happen when a non-number button is pressed
         isFinishedTypingNumber = true
         //calculation
-        guard let number = Double(displayLabel.text!) else {
-            fatalError("Non Number String Cast: \(displayLabel.text)")
-        }
         guard let calcMethod = sender.currentTitle else {
             fatalError("Calc button missing text")
         }
         if calcMethod == "+/-" {
-            displayLabel.text = String(number * -1)
+            displayValue *= -1
             //isFinishedTypingNumber = false
         } else if calcMethod == "AC" {
-            displayLabel.text = "0"
+            displayValue = 0
         } else if calcMethod == "%" {
-            displayLabel.text = String(number / 100)
+            displayValue /= 100
             //isFinishedTypingNumber = false
         }
     }
@@ -41,6 +50,13 @@ class ViewController: UIViewController {
             fatalError("Number button title returned nil!")
         }
         guard isFinishedTypingNumber else {
+            if number == "." {
+                let isInt: Bool = floor(displayValue) == displayValue
+                if !isInt {
+                    //this is bullshit, number already has a decimal point
+                    return
+                }
+            }
             displayLabel.text?.append(number)
             return
         }
