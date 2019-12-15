@@ -30,13 +30,15 @@ struct CalculatorLogic {
             return n / 100
         } else if symbol == "=" {
             //trigger the entire calculation
-            return performTwoNumberCalculation(n2: n)
+            number = performTwoNumberCalculation(n2: n)
+            intermediateCalculation = nil
+            return number
         } else {
             // + - * /
-            intermediateCalculation = (n1: n, calcMethod: symbol)
-            return n
+            number = performTwoNumberCalculation(n2: n)
+            intermediateCalculation = (n1: number!, calcMethod: symbol)
+            return number
         }
-        return nil
     }
     private func performTwoNumberCalculation(n2: Double) -> Double {
         guard let n1 = intermediateCalculation?.n1, let operation = intermediateCalculation?.calcMethod else {
