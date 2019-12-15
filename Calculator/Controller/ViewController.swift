@@ -47,10 +47,11 @@ class ViewController: UIViewController {
         guard let number = sender.currentTitle else {
             fatalError("Number button title returned nil!")
         }
-        guard isFinishedTypingNumber else {
+        if !isFinishedTypingNumber {
             if number == "." {
+                //anotherCorner Case
                 let isInt: Bool = floor(displayValue) == displayValue
-                if !isInt {
+                if !isInt || (displayLabel.text?.contains("."))! {
                     //this is bullshit, number already has a decimal point
                     return
                 }
@@ -59,7 +60,14 @@ class ViewController: UIViewController {
             return
         }
         isFinishedTypingNumber = false
-        displayLabel.text = number
+        //corner case
+        if number == "." {
+            if displayLabel.text?.first == "0" {
+                displayLabel.text = "0."
+            }
+        } else {
+            displayLabel.text = number
+        }
     }
 }
 

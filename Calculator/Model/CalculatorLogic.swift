@@ -54,7 +54,7 @@ struct CalculatorLogic {
         case "÷":
             return n1 / n2
         default:
-            return n2
+            fatalError("The operation passed in does not match any of the cases.")
         }
     }
 }
