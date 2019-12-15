@@ -25,6 +25,8 @@ class ViewController: UIViewController {
             displayLabel.text = String(newValue)
         }
     }
+    //model
+    private var calculator = CalculatorLogic()
     //all calculations
     @IBAction func calcButtonPressed(_ sender: UIButton) {
         //What should happen when a non-number button is pressed
@@ -33,15 +35,11 @@ class ViewController: UIViewController {
         guard let calcMethod = sender.currentTitle else {
             fatalError("Calc button missing text")
         }
-        if calcMethod == "+/-" {
-            displayValue *= -1
-            //isFinishedTypingNumber = false
-        } else if calcMethod == "AC" {
-            displayValue = 0
-        } else if calcMethod == "%" {
-            displayValue /= 100
-            //isFinishedTypingNumber = false
+        calculator.setNumber(displayValue)
+        guard let result = calculator.calculate(symbol: calcMethod) else {
+            fatalError("result of the calculation is nil")
         }
+        displayValue = result
     }
     //all numbers
     @IBAction func numButtonPressed(_ sender: UIButton) {

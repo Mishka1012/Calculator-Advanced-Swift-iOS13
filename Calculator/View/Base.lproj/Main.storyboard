@@ -305,16 +305,16 @@
     </scenes>
     <resources>
         <namedColor name="Background">
-            <color red="0.76425570249999997" green="0.83146637680000002" blue="0.75684618950000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.76399999856948853" green="0.83099997043609619" blue="0.75700002908706665" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Display">
-            <color red="0.45485991240000001" green="0.47838950159999999" blue="0.50969344380000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.45500001311302185" green="0.4779999852180481" blue="0.50999999046325684" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Numbers">
-            <color red="0.86780470610000005" green="0.34184420110000002" blue="0.3296742439" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.86799997091293335" green="0.34200000762939453" blue="0.33000001311302185" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="Ops">
-            <color red="0.29950356480000001" green="0.6704791188" blue="0.66260427239999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.30000001192092896" green="0.67000001668930054" blue="0.66299998760223389" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
 </document>
